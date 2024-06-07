@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>햄찌볼</title>
+    <link rel="shortcut icon" href="assets/sprites/spr_ball.png" />
+    <style>
+      @font-face {
+        font-family: "BMJUA";
+        src: url(assets/font/BMJUA_ttf.ttf) format("truetype");
+      }
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    oncontextmenu="return false"
+    ondragstart="return false"
+    onselectstart="return false"
+  >
+    <script
+      src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/lib/phaser.min.js"></script>
+    <script src="js/lib/phaser-input.js"></script>
+    <script src="js/lib/HealthBar.standalone.js"></script>
+
+    <script src="js/Boot.js"></script>
+    <script src="js/Main.js"></script>
+    <script src="js/SelectMode.js"></script>
+    <script src="js/SingleCustom.js"></script>
+    <script src="js/MultiCustom.js"></script>
+    <script src="js/Tutorial.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/GameMulti.js"></script>
+
+    <script>
+      var game = new Phaser.Game(
+        CANVAS_WIDTH,
+        CANVAS_HEIGHT,
+        Phaser.AUTO,
+        "canvas_game",
+        this,
+        false,
+        false
+      );
+      game.state.add("boot", boot);
+      game.state.add("main", main);
+      game.state.add("selectMode", selectMode);
+      game.state.add("singleCustom", singleCustom);
+      game.state.add("multiCustom", multiCustom);
+      game.state.add("tutorial", tutorial);
+      game.state.add("Game", Game);
+      game.state.add("gameMulti", gameMulti);
+      game.state.start("boot");
+    </script>
+  </body>
+</html>
