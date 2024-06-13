@@ -1,4 +1,4 @@
-# 햄찌볼 https://junhaddi.com/hamzzi
+# 햄찌볼 http://junhaddi.com/hamzzi
 
 ## BGM
 
